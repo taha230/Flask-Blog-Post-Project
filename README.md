@@ -5,6 +5,13 @@ A comprehensive blog application built with Flask that provides user management,
 This project is based on the original code from alihamidzadeh/Web-Application-with-Flask
  and has been modified to fix bugs and improve functionality.
 
+
+<div align="center" style="margin-bottom:30px;">
+ <img width="1340" height="839" alt="Screenshot from 2025-10-22 14-06-18" src="https://github.com/user-attachments/assets/fea20e25-df5c-4ea9-bb1f-0b89db3fc163" />
+</div>
+<br><br> <!-- add more <br> if you need more space -->
+
+
 ## 📝 Features
 
 ### User Management
