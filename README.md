@@ -2,7 +2,10 @@
 
 A comprehensive blog application built with Flask that provides user management, post creation, commenting, and interaction features.
 
-## 🚀 Features
+This project is based on the original code from alihamidzadeh/Web-Application-with-Flask
+ and has been modified to fix bugs and improve functionality.
+
+## 📝 Features
 
 ### User Management
 - **User Registration & Authentication**: Secure user registration and login system
@@ -95,23 +98,14 @@ Flask_Blog_Application/
 5. **Access the application**
    Open your browser and navigate to `http://localhost:5000`
 
-## 👥 User Roles
+## 🧪 User Roles
 
-### Admin
-- Full access to all features
-- Can create, edit, and delete any post
-- Can manage users
-- Can view admin panel
+| Role    | Permissions |
+|---------|-------------|
+| `admin` | Manage users, posts, and can access security-sensitive features |
+| `author` | Create and edit their own posts |
+| `normal` | Can read, comment, like/dislike posts |
 
-### Author
-- Can create, edit, and delete their own posts
-- Can comment and like posts
-- Can change their password
-
-### Regular User
-- Can comment and like posts
-- Can change their password
-- Cannot create or edit posts
 
 ## 🔧 Configuration
 
@@ -124,6 +118,15 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SALT_STRING = 'TAHAHAMEDANI'  # Salt for password hashing
 ```
+
+## 🛡 Password Hashing Logic
+
+```python
+hashlib.md5((raw_password + f"{user.id}Ferdowsi").encode()).hexdigest()
+```
+
+- Uses MD5 + static salt pattern SALT_STRING
+- Based on `user.id`, making hashes unique per user
 
 ## 📊 Database Models
 
@@ -158,18 +161,18 @@ class Config:
 - **Session Management**: Secure session handling
 - **Role-Based Access**: Different permissions for different user types
 
-## 🎯 API Endpoints
+## 🌐 URLs
 
-- `GET /` - Home page with all posts
-- `GET/POST /login` - User login
-- `GET /logout` - User logout
-- `GET/POST /create` - Create new post
-- `GET/POST /edit/<post_id>` - Edit existing post
-- `POST /delete/<post_id>` - Delete post
-- `GET/POST /admin/users` - Admin user management
-- `GET/POST /change-password` - Change user password
-- `GET /like/<post_id>/<action>` - Like/dislike post
-- `POST /comment/<post_id>` - Add comment to post
+| Route | Purpose |
+|-------|---------|
+| `/` | Homepage with posts |
+| `/login` | Login page |
+| `/logout` | Logout |
+| `/create` | New post (author/admin) |
+| `/admin/users` | Manage users (admin only) |
+| `/instance` | Intentionally exposed directory |
+
+---
 
 ## 🚀 Getting Started
 
