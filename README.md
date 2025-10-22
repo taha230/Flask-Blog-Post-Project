@@ -2,7 +2,7 @@
 
 A comprehensive blog application built with Flask that provides user management, post creation, commenting, and interaction features.
 
-This project is based on the original code from alihamidzadeh/Web-Application-with-Flask
+This project is based on the original code from <a href=alihamidzadeh/Web-Application-with-Flask>
  and has been modified to fix bugs and improve functionality.
 
 
