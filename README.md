@@ -130,7 +130,7 @@ class Config:
 ## 🛡 Password Hashing Logic
 
 ```python
-hashlib.md5((raw_password + f"{user.id}Ferdowsi").encode()).hexdigest()
+hashlib.md5((raw_password + f"{user.id}{Config.SALT_STRING}").encode()).hexdigest()
 ```
 
 - Uses MD5 + static salt pattern SALT_STRING
